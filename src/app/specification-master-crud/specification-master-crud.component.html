@@ -1,0 +1,58 @@
+
+ <div class="wrapper">
+  <div class="col-lg-12">
+     <div class="table-responsive">
+     <table class="table table-bordered">
+       <thead class="text-nowrap">
+         <tr>
+           <th rowspan="2" class="align-middle" title="Required Parameters (UOM)"> Required <br>Parameters
+             <span>(UOM)</span></th>
+           <th title="tolarance" colspan="2" class="text-center" title="Tolarance">Tolerance</th>
+           <th title="values" colspan="3" class="text-center" title="Values">Values</th>
+           <th rowspan="2" class="align-middle" title="Mandatory">Mandatory</th>
+           <th rowspan="2" class="align-middle" title="Sample Required">Sample<br> Required</th>
+           <th rowspan="2" class="align-middle" title="No of Samples">No of<br> Samples</th>
+           <th rowspan="2" class="align-middle" title="Validity">Validity</th>
+           <th rowspan="2" class="align-middle" title="Validity date and time">Validity DATE<br> and time
+           </th>
+           <th rowspan="2" class="align-middle" title="Version">Version</th>
+         </tr>
+         <tr>
+           <th class="text-center" title="Min %">Min %</th>
+           <th class="text-center" title="Max %">Max %</th>
+           <th class="text-center" title="Min">Min</th>
+           <th class="text-center" title="Aim">Aim</th>
+           <th class="text-center" title="Max">Max</th>
+         </tr>
+       </thead>
+       <tbody class="text-nowrap">
+        <tr *ngFor="let specification of specificationList;index as i" (click)="onClickSelectedRow(i)"
+        [class.selected]="i==selectedIndex">
+       <td><input [readOnly]="!edit"  type="text" [(ngModel)]="specification.requiredParameters"></td>
+       <td><input [readOnly]="!edit"  type="text" [(ngModel)]="specification.tolMin"></td>
+       <td><input [readOnly]="!edit"  type="text" [(ngModel)]="specification.tolMax"></td>
+       <td><input [readOnly]="!edit"  type="text" [(ngModel)]="specification.valuesMIN"></td>
+       <td><input [readOnly]="!edit"  type="text" [(ngModel)]="specification.valuesAim"></td>
+       <td><input [readOnly]="!edit"  type="text" [(ngModel)]="specification.valuesMAX"></td>
+       <td><input [readOnly]="!edit"  type="text" [(ngModel)]="specification.mandatory"></td>
+       <td><input [readOnly]="!edit"  type="text" [(ngModel)]="specification.sampleRequired"></td>
+       <td><input [readOnly]="!edit"  type="text" [(ngModel)]="specification.noOfSamples"></td>
+       <td><input [readOnly]="!edit"  type="text" [(ngModel)]="specification.validity"></td>
+       <td><input [readOnly]="!edit"  type="text" [(ngModel)]="specification.validityDateTime"></td>
+       <td><input [readOnly]="!edit"  type="text" [(ngModel)]="specification.version"></td>
+        </tr>
+       </tbody>
+     </table>
+ 
+  
+ </div>
+</div>
+ <div class="popBtn text-right col-lg-12 ">
+   <button name="submit" class="btn" title="Add" value="ngSubmit" (click)="onAdd()">Add New</button>
+   <button name="submit" class="btn" title="Save" value="ngSubmit" (click)="onSave()">Save</button>
+   <button name="submit" class="btn" title="Edit" value="ngSubmit" (click)="onEdit()">Edit</button>
+   <button name="submit" class="btn" title="Edit" value="ngSubmit" (click)="onUpdate()">Update</button>
+   <button name="submit" class="btn" title="Delete" value="ngSubmit" (click)="onDelete()">Delete</button>
+
+</div>
+ </div>
